@@ -1,0 +1,11 @@
+{
+  "name": "mono-repo-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "shared/*",
+    "projects/*"
+  ]
+}
