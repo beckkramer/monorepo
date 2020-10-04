@@ -1,8 +1,26 @@
 [yarnWorkspacesLink]: https://classic.yarnpkg.com/en/docs/workspaces/
+[nextGithub]: https://github.com/vercel/next.js
+[materialUISite]: https://material-ui.com/
 
-# Example Monorepo Approach
+# Example Multi-App Monorepo
 
-This setup uses [Yarn Workspace](yarnWorkspacesLink) to connect packages together from a root source.
+You can think of a monorepo like an office building for a company: different floors for different departments doing specialized work, but they may sometimes need to interact with each other to get a job done. They also all individually share various utilities and areas like elevators, a mail room, and maybe a cafeteria.
+
+The monorepo approach can be a good fit for organizations that have several small applications that need to leverage the same components or utilities. Just like any approach, [there are pros and cons involved](https://www.happycoders.eu/java/monorepos-advantages-disadvantages/), so it's a good idea to have a solid familiarity with what those are before settling on a monorepo as a solution for your work. 
+
+The following documentation uses the following language to describe the different moving parts in play:
+
+* **Project**: An independent application's code, essentially a package
+* **Shared Code**: Components or utilities that can be used by any and all applications
+
+
+## Tooling 
+
+This setup uses:
+
+* [Yarn Workspace](yarnWorkspacesLink) to connect packages together from a root source
+* [Next.js](nextGithub) for the example projects (though any React project would work)
+* [Material UI](materialUISite) for well-documented UI patterns to build off of
 
 
 ## Adding New Projects
@@ -11,14 +29,14 @@ This setup uses [Yarn Workspace](yarnWorkspacesLink) to connect packages togethe
 
 Yarn Workspaces creates references to node modules in the root folder, rather than creating a `node_modules` folder full of other folders with code inside:
 
+![GLP-monorepo-screenshot-004](https://user-images.githubusercontent.com/2972688/95025567-4a61b600-0650-11eb-8d20-7c221a0ed755.png)
 
-
-This lets packages share dependencies which might lead to faster start up times.
+This lets packages share dependencies, but also lets one local package reference code in another without the need for creating individual external NPM packages, etc.
 
 
 ### Referencing One Project in Another
 
-When adding a new project, it's imporant to understand how it will be referenced by other packages or projects within the monorepo. From the [Yarn Workspaces](yarnWorkspacesLink) docs:
+When adding a new project, it's imporant to understand how it will be referenced by other projects within the monorepo. From the [Yarn Workspaces](yarnWorkspacesLink) docs:
 
 "You also need to know that the `/[child-package]/package.json#name` field is used and not the folder name. "
 
@@ -45,7 +63,7 @@ projects
 
 If we wanted to add Project One as a dependancy to Project Two, we would add the following to `./projects/proj-two/package.json`:
 
-```json
+```js
 // ./projects/proj-one/package.json
 
 {
