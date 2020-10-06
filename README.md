@@ -2,7 +2,7 @@
 [nextGithub]: https://github.com/vercel/next.js
 [materialUISite]: https://material-ui.com/
 
-# Example Multi-App Monorepo
+# Multi-App Monorepo
 
 You can think of a monorepo like an office building for a company: different floors for different departments doing specialized work, but they may sometimes need to interact with each other to get a job done. They also all individually share various utilities and areas like elevators, a mail room, and maybe a cafeteria.
 
