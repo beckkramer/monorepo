@@ -82,9 +82,8 @@ Notice how the `name` value and not the project's folder name is used.
 ### Adding a New Project
 
 1. Create a new folder in `projects`, either manually or via an automated process like `npx create-next-app`
-1. If an automated process is used, once the project is set up you should delete that project's `node_modules` at this time. 
-1. Add any dependencies to this new project with `yarn add package-name -W` . The `-W` will signal that the dependency should be limited to the current project/workspace, and not the global/root one.
-1. Add the `cross-env` package to your new project.
+1. If an automated process is used, once the project is set up you should delete that project's `node_modules` folder. 
+1. To add any dependencies to this new project, cd into that project's folder and run `yarn add package-name -W`. The `-W` will signal that the dependency should be limited to the current project/workspace, and not the global/root one.
 1. Reference the `name` values of any monorepo projects you want to include as dependencies in the `dependencies` object in your project's `package.json` file.
 1. Go to the root folder and run `yarn install` to hook everything up.
 1. If you used an automated process to generate your new project, it might have added git tracking to that project in its folder. You will also want to clear this out so that the root project can take care of tracking changes. To do so run `git rm --cached projects/[project folder]` from root.
