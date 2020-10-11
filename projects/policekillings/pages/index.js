@@ -13,8 +13,8 @@ export default function Home() {
       </Head>
 
       <AppBar
-        projectDescription="This is one."
-        projectName="Project One"
+        projectDescription="An app that reports out on police killing statistics throughout the United States"
+        projectName="Police Killings App"
       >
         <NavLink href="/one" label="Project One Contact" />
       </AppBar>
