@@ -1,9 +1,9 @@
 {
-  "name": "project-one",
+  "name": "policekillings",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 10001",
+    "dev": "next dev -p 10003",
     "build": "next build",
     "start": "next start"
   },
