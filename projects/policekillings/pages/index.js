@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import { AppBar, NavLink } from 'components'
 
+import BrutalityByState from "components/widgets/BrutalityByState";
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -20,7 +22,7 @@ export default function Home() {
       </AppBar>
 
       <main className={styles.main}>
-        Content!
+        <BrutalityByState/>
       </main>
     </div>
   )
